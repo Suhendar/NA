@@ -26,8 +26,11 @@ CREATE TABLE `data` (
   `kelas` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
+tambahkan data apa saja ke dalam tabel
 
 Lalu buka di browser anda
+
+jika data nya tampil itu artinya anda berhasil
 
 format penulisan url sebagai berikut
 
