@@ -32,5 +32,5 @@ Lalu buka di browser anda
 format penulisan url sebagai berikut
 
 ```
-..../namacontroler/action/value
+..../index.php?/namacontroler/action/value
 ```
