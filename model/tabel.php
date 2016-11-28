@@ -1,20 +1,15 @@
 <?php
-	namespace model;
-	use lib\MVC\model\model;
+	namespace model;									//penting!!
+	use lib\MVC\model\model;					//penting!!
 
 	class tabel extends model{
 		public function __construct(){
-			parent::__construct();
-		}
-		public function konek(){
-			$ha = $this->teskonek();
-			return $ha;
+			parent::__construct();				//penting!!
 		}
 		public function ambil(){
 			$col = array("nama","kelas");
 			$this->select($col);
 			$this->from("data");
-			$this->where("kelas","XII TKJ 2");
 
 			return $this->get();
 		}

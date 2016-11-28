@@ -1,20 +1,23 @@
 <?php
 	namespace lib\MVC;
-	
+
 	class router{
 		private $controler;
 		public $action;
 		public $ulrparams;
 		private $co_nspce = "\\controler\\";
 		private $basecon = "lib\\MVC\\controler\\base";
-		
+
 		public function __construct($urlp){
-			$this->urlparams = $urlp;
-			
-			 $this->controler = (empty($this->urlparams['controler'])) ? $this->co_nspce."home":$this->co_nspce.$this->urlparams['controler'];
-			 
-			 $this->action = (empty($this->urlparams["action"])) ? "index":$this->urlparams["action"];
-			 
+			$param="";
+			foreach ($urlp as $key => $value) {
+				$param=$key;
+			}
+			$this->urlparams = explode("/",$param);
+			 $this->controler = (empty($this->urlparams[1])) ? $this->co_nspce."home":$this->co_nspce.$this->urlparams[1];
+
+			 $this->action = (empty($this->urlparams[2])) ? "index":$this->urlparams[2];
+
 		}
 		public function  getcontroler(){
 			if(class_exists($this->controler)){

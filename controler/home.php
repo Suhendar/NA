@@ -1,11 +1,11 @@
 <?php
-	namespace controler;
-	use lib\MVC\controler\base;
-	use model\tabel;
+	namespace controler;							//penting!!
+	use lib\MVC\controler\base;				//penting!!
+	use model\tabel;									//penting!!
 	class home extends base{
 		public function __construct(){
-				parent::__construct();
-				$this->model("tabel");
+				parent::__construct();			//penting!!
+				$this->model("tabel"); 			//panggil model
 		}
 		public function index(){
 			$data['hasil'] = $this->model->ambil();
@@ -17,13 +17,12 @@
 			$this->index();
 		}
 		public function ubah(){
-			$data = array("kelas" => "XII TKJ 2");
-			$q["hasil"] = $this->model->ubah($data);
-			$this->view("view",$q);
+			$data = array("kelas" => "XII TKJ 1");
+			$this->model->ubah($data);
 		}
 		public function hapus(){
 			$this->model->hapus("nama","rahmat");
-			$this->index();
+			redirect(index);
 		}
 	}
  ?>
